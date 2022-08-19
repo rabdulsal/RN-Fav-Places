@@ -35,7 +35,7 @@ Do following:
  3. Update item
  4. Dashboard
     - show categories(switch, router, cable modem...) and total number of devices.
-        * use Redux to store all device info, then can filter by 'type'?
+        * use native array-filter functionality to filter by static device-types
     - search by name, location,
         * use Redux from above to filter by 'name', 'location' etc.
         - scan barcode find devices info
@@ -47,6 +47,9 @@ POST   https://mockend.com/learningmachine00/testAPI/Device
 DELETE https://mockend.com/learningmachine00/testAPI/Device/<id>
 
 ** Additions **
+- Button to launch screen with form to Add New Device
+- Button for each DeviceCard to delete entry
 - Loading spinner?
-- Headers/NavBars?
+- Headers/NavBars and Navigation to to different screens like Camera-scan
+    - DeviceDetails page
 */

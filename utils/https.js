@@ -47,9 +47,14 @@ POST   https://mockend.com/learningmachine00/testAPI/Device
 DELETE https://mockend.com/learningmachine00/testAPI/Device/<id>
 
 ** Additions **
-- Button to launch screen with form to Add New Device
-- Button for each DeviceCard to delete entry
+- Button to launch modal with form to Add New Device
+- Button for each DeviceCard to delete/edit entry
 - Loading spinner?
 - Headers/NavBars and Navigation to to different screens like Camera-scan
     - DeviceDetails page
+
+** Separate knowledge questions:
+- passing styles in array
+- difference btw 'const' and 'let'
+- difference btw 'export' and 'export default'
 */

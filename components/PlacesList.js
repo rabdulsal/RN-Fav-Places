@@ -1,18 +1,21 @@
 import { View, Text, StyleSheet, FlatList } from 'react-native';
-import { PlaceItem } from './PlaceItem';
+import PlaceItem from './PlaceItem';
 
-export function PlacesList({ places }) {
+export default function PlacesList({ places }) {
 
+    if (!places || places.length === 0) {
+        return (
+            <View style={styles.noContentContainer}>
+                <Text style={styles.noContentText}>No Places added. Start adding some to see them here!</Text>
+            </View>
+        );
+    }
+    
     function renderPlace(placeData) {
-        const place = placeData.item;
+        console.log("Render Place fired.")
+        console.log(placeData)
 
-        if (!places || places.length === 0) {
-            return (
-                <View style={styles.noContentContainer}>
-                    <Text style={styles.noContentText}>No Places added. Start adding some to see them here!</Text>
-                </View>
-            );
-        }
+        const place = placeData.item;
 
         return (
             <PlaceItem

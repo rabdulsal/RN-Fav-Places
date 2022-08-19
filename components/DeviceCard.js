@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet } from 'react-native';
 
-export function DeviceCard({ device }) {
+export default function DeviceCard({ device }) {
 
 
     return (

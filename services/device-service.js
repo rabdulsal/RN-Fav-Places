@@ -16,7 +16,6 @@ export async function makeNewDevice() {
       type: "a"
     }
     const response = await Networking.addDevice(deviceData);
-    console.log(response);
   }
 
   export async function updateDevice() {
@@ -28,19 +27,16 @@ export async function makeNewDevice() {
       type: "r-type"
     };
     const response = await Networking.updateDevice(id,newData);
-    console.log(response);
   }
 
   export async function deleteDevice() {
     const id = 1000;
     const newID = 565;
     const response = await Networking.deleteDevice(newID);
-    console.log(response);
   }
 
   export async function getDevice(deviceID) {
     const id = 1000;
     const newID = 565;
     const response = await Networking.fetchDevice(deviceID);
-    console.log(response);
   }

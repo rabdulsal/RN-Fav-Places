@@ -1,9 +1,9 @@
 import { StyleSheet, Text, View, FlatList, TextInput } from 'react-native';
 import { useEffect, useState, useLayoutEffect } from 'react';
-import { DeviceCard } from '../components/DeviceCard';
+import DeviceCard from '../components/DeviceCard';
 import * as DeviceService from '../services/device-service';
 
-export function DeviceListScreen() {
+export default function DeviceListScreen() {
 
     // NOTE: Use for setting & retrieving state-changing objects
   const [filteredDevices, setFilteredDevices] = useState([]); // Array to represent/display the changing list of filtered devices
@@ -24,6 +24,7 @@ export function DeviceListScreen() {
   }, [] /* <-- Place object here to selectively trigger UI updates */ )
 
   function searchName(searchTerm) {
+    // NOTE: Bug where entering '2' letters paints 2 SearchBars and Lists onto screen
     if (searchTerm !== "") {
       const searchDevices = allDevices.filter((device) => {
         return device.name.toLowerCase().includes(searchTerm.toLowerCase()) || device.location.toLowerCase().includes(searchTerm.toLowerCase())
@@ -64,7 +65,7 @@ export function DeviceListScreen() {
             />
         <View style={styles.deviceCountContainer}>
             <Text style={styles.deviceCountTitle}>Total Devices:</Text>
-            <Text style={styles.deviceCount}>{allDevices.length}</Text>
+            <Text style={styles.deviceCount}>{filteredDevices.length}</Text>
         </View>
         <FlatList
             data={filteredDevices}
@@ -104,7 +105,8 @@ const styles = StyleSheet.create({
     deviceCountContainer: {
         marginHorizontal: 10,
         marginVertical: 5,
-        flexDirection: 'row'
+        flexDirection: 'row',
+        alignItems: 'center'
     },
     deviceCountTitle: {
         fontSize: 12,

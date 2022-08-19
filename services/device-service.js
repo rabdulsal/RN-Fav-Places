@@ -1,9 +1,9 @@
-import * as Networking from './utils/https';
+import * as Networking from '../utils/https';
 
 export async function fetchDevices() {
-    const response = await Networking.fetchData();
+    const response = await Networking.fetchDevices();
       // console.log(response.data)
-    setDevices(response.data);
+    return response.data;
 }
 
 export async function makeNewDevice() {

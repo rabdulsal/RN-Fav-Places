@@ -35,8 +35,11 @@ Do following:
  3. Update item
  4. Dashboard
     - show categories(switch, router, cable modem...) and total number of devices.
+        * use Redux to store all device info, then can filter by 'type'?
     - search by name, location,
+        * use Redux from above to filter by 'name', 'location' etc.
         - scan barcode find devices info
+            * use 'bar-code-scanner' API to pull a 'name' or 'serialNumber', then filter/search as above
 REST Endpoints:
 GET https://mockend.com/learningmachine00/testAPI/Device
 GET https://mockend.com/learningmachine00/testAPI/Device/<id>

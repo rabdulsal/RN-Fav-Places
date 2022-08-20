@@ -1,0 +1,11 @@
+
+// This is a test file to demonstrate the functionality 
+// of the REST Client VSCode Extension
+
+
+https://jsonplaceholder.typicode.com/posts
+
+###
+https://jsonplaceholder.typicode.com/posts/50
+
+

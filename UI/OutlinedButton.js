@@ -22,9 +22,9 @@ export default function OutlinedButton({ onPress, icon, children }) {
 const styles = StyleSheet.create({
   button: {
     height: 50,
-    paddingHorizontal: 8,
+    paddingHorizontal: 12,
     paddingVertical: 6,
-    margin: 4,
+    marginVertical: 8,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",

@@ -6,13 +6,14 @@ import {
 import { useState } from "react";
 import { View, Text, StyleSheet, Button, Alert, Image } from "react-native";
 import { Colors } from "../constants/colors";
-import OutlinedButton from "./OutlinedButton";
+import OutlinedButton from "../UI/OutlinedButton";
 
 export default function ImagePicker() {
   const [cameraPermissionInformation, requestPermission] =
     useCameraPermissions();
   const [pickedImage, setPickedImage] = useState();
 
+  // TODO: Extract into separate, re-usable component for Location too
   async function verifyPermissions() {
     if (cameraPermissionInformation.status === PermissionStatus.UNDETERMINED) {
       const permission = await requestPermission();
@@ -28,6 +29,7 @@ export default function ImagePicker() {
     }
     return true;
   }
+  // --- End Re-usable portion
 
   async function takeImageHandler() {
     const hasPermissions = await verifyPermissions();
@@ -72,5 +74,6 @@ const styles = StyleSheet.create({
   image: {
     width: "100%",
     height: "100%",
+    borderRadius: 4,
   },
 });

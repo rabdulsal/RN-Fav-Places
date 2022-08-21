@@ -41,6 +41,8 @@ const styles = StyleSheet.create({
   },
   noContentText: {
     fontSize: 16,
+    fontWeight: "bold",
     color: Colors.primary200,
+    textAlign: "center",
   },
 });
